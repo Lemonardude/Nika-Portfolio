@@ -1,19 +1,7 @@
 {
   "works": [
     {
-      "index": 3,
-      "name": "FLASHBACK",
-      "featured": true,
-      "isBig": true,
-      "mainImage": "images/FLASHBACK/main.png",
-      "images": [
-        "images/FLASHBACK/1.png",
-        "images/FLASHBACK/2.png",
-        "images/FLASHBACK/3.png"
-      ]
-    },
-    {
-      "index": 5,
+      "index": 4,
       "name": "mirage",
       "featured": true,
       "isBig": true,
@@ -33,6 +21,18 @@
       ]
     },
     {
+      "index": 2,
+      "name": "FLASHBACK",
+      "featured": true,
+      "isBig": true,
+      "mainImage": "images/FLASHBACK/main.png",
+      "images": [
+        "images/FLASHBACK/1.png",
+        "images/FLASHBACK/2.png",
+        "images/FLASHBACK/3.png"
+      ]
+    },
+    {
       "index": 16,
       "name": "עשן הזמן",
       "featured": true,
@@ -45,28 +45,16 @@
     },
     {
       "index": 0,
-      "name": "_סקיצה_",
-      "featured": false,
-      "isBig": false,
-      "mainImage": "images/_%D7%A1%D7%A7%D7%99%D7%A6%D7%94_/main.jpg",
-      "images": []
-    },
-    {
-      "index": 1,
       "name": "Brush Bunny",
-      "featured": false,
+      "featured": true,
       "isBig": true,
-      "mainImage": "images/Brush%20Bunny/Main.png",
+      "mainImage": "images/Brush%20Bunny/main.png",
       "images": [
-        "images/Brush%20Bunny/1.png",
-        "images/Brush%20Bunny/2.png",
-        "images/Brush%20Bunny/3.png",
-        "images/Brush%20Bunny/4.png",
-        "images/Brush%20Bunny/5.png"
+        "images/Brush%20Bunny/1.png"
       ]
     },
     {
-      "index": 2,
+      "index": 1,
       "name": "DAVID HOCKNEY",
       "featured": false,
       "isBig": false,
@@ -74,25 +62,27 @@
       "images": []
     },
     {
-      "index": 4,
+      "index": 3,
       "name": "LADIES FIRST - קבוצת רובוטיקה נשים",
       "featured": false,
       "isBig": true,
       "mainImage": "images/LADIES%20FIRST%20-%20%D7%A7%D7%91%D7%95%D7%A6%D7%AA%20%D7%A8%D7%95%D7%91%D7%95%D7%98%D7%99%D7%A7%D7%94%20%D7%A0%D7%A9%D7%99%D7%9D/main.jpg",
       "images": [
         "images/LADIES%20FIRST%20-%20%D7%A7%D7%91%D7%95%D7%A6%D7%AA%20%D7%A8%D7%95%D7%91%D7%95%D7%98%D7%99%D7%A7%D7%94%20%D7%A0%D7%A9%D7%99%D7%9D/%D7%9C%D7%95%D7%92%D7%95%20%D7%9C%D7%A7%D7%91%D7%95%D7%A6%D7%AA%20%D7%A8%D7%95%D7%91%D7%95%D7%98%D7%99%D7%A7%D7%94%20%D7%A9%D7%9C%20%D7%A0%D7%A9%D7%99%D7%9D.jpg"
-      ]
+      ],
+      "docxText": "עיצוב לוגו לקבוצת רובוטיקה של בנות אולפנה"
     },
     {
-      "index": 6,
+      "index": 5,
       "name": "MYMEALS",
       "featured": false,
       "isBig": false,
       "mainImage": "images/MYMEALS/main.jpg",
-      "images": []
+      "images": [],
+      "docxText": "עיצוב ולוגו ואפליקציית מעקב תזונה"
     },
     {
-      "index": 7,
+      "index": 6,
       "name": "seasalt עיצוב לוגו ואפליקציית הזמנות",
       "featured": false,
       "isBig": false,
@@ -100,25 +90,27 @@
       "images": []
     },
     {
-      "index": 8,
+      "index": 7,
       "name": "walking on a dream",
       "featured": false,
       "isBig": true,
       "mainImage": "images/walking%20on%20a%20dream/main.png",
       "images": [
         "images/walking%20on%20a%20dream/walking%20on%20a%20dream%20eye.mp4"
-      ]
+      ],
+      "docxText": "סרטון אנימציה בלופ.\n\nתהליך העבודה כלל בניית תסריט, איור ידני בפרוקרייט, אנימציה ידנית ועבודת בתוכנת האפטר אפקט (procreate, AE)"
     },
     {
-      "index": 9,
+      "index": 8,
       "name": "הקולב",
       "featured": false,
       "isBig": false,
       "mainImage": "images/%D7%94%D7%A7%D7%95%D7%9C%D7%91/main.jpg",
-      "images": []
+      "images": [],
+      "docxText": "עיצוב אפליקציה ולוגו לאפליקציית בגדים יד 2"
     },
     {
-      "index": 10,
+      "index": 9,
       "name": "לוגו מפיקת אירועים",
       "featured": false,
       "isBig": false,
@@ -126,15 +118,16 @@
       "images": []
     },
     {
-      "index": 11,
+      "index": 10,
       "name": "מכללה טכנולוגית- אגודת הסטודנטים",
       "featured": false,
       "isBig": false,
       "mainImage": "images/%D7%9E%D7%9B%D7%9C%D7%9C%D7%94%20%D7%98%D7%9B%D7%A0%D7%95%D7%9C%D7%95%D7%92%D7%99%D7%AA-%20%D7%90%D7%92%D7%95%D7%93%D7%AA%20%D7%94%D7%A1%D7%98%D7%95%D7%93%D7%A0%D7%98%D7%99%D7%9D/main.png",
-      "images": []
+      "images": [],
+      "docxText": "עיצוב לוגו ופוסט לתחילת הלימודים-מכללה טכנולוגית"
     },
     {
-      "index": 12,
+      "index": 11,
       "name": "משחק פוקר",
       "featured": false,
       "isBig": false,
@@ -142,12 +135,22 @@
       "images": []
     },
     {
-      "index": 13,
+      "index": 12,
       "name": "ספר ביוגרפיה יאיו קוסמה",
       "featured": false,
       "isBig": false,
       "mainImage": "images/%D7%A1%D7%A4%D7%A8%20%D7%91%D7%99%D7%95%D7%92%D7%A8%D7%A4%D7%99%D7%94%20%D7%99%D7%90%D7%99%D7%95%20%D7%A7%D7%95%D7%A1%D7%9E%D7%94/main.jpg",
       "images": []
+    },
+    {
+      "index": 13,
+      "name": "סקיצה",
+      "featured": false,
+      "isBig": false,
+      "mainImage": "images/%D7%A1%D7%A7%D7%99%D7%A6%D7%94/main.jpg",
+      "images": [],
+      "docxText": "מיתוג בית ספר לעיצוב בשם סקיצה ועיצוב שלט חוצות",
+      "displayName": "“סקיצה”"
     },
     {
       "index": 14,
@@ -164,7 +167,7 @@
       "name": "עיצובים להזמנות בסושיאל לאירועים בספריה",
       "featured": false,
       "isBig": false,
-      "mainImage": "images/%D7%A2%D7%99%D7%A6%D7%95%D7%91%D7%99%D7%9D%20%D7%9C%D7%94%D7%96%D7%9E%D7%A0%D7%95%D7%AA%20%D7%91%D7%A1%D7%95%D7%A9%D7%99%D7%90%D7%9C%20%D7%9C%D7%90%D7%99%D7%A8%D7%95%D7%A2%D7%99%D7%9D%20%D7%91%D7%A1%D7%A4%D7%A8%D7%99%D7%94/main.png",
+      "mainImage": "images/%D7%A2%D7%99%D7%A6%D7%95%D7%91%D7%99%D7%9D%20%D7%9C%D7%94%D7%96%D7%9E%D7%A0%D7%95%D7%AA%20%D7%91%D7%A1%D7%95%D7%A9%D7%99%D7%90%D7%9C%20%D7%9C%D7%90%D7%99%D7%A8%D7%95%D7%A2%D7%99%D7%9D%20%D7%91%D7%A1%D7%A4%D7%A8%D7%99%D7%94/%D7%A2%D7%99%D7%A6%D7%95%D7%91%D7%99%D7%9D%20%D7%9C%D7%94%D7%96%D7%9E%D7%A0%D7%95%D7%AA%20%D7%91%D7%A1%D7%95%D7%A9%D7%99%D7%90%D7%9C%20%D7%9C%D7%90%D7%99%D7%A8%D7%95%D7%A2%D7%99%D7%9D%20%D7%91%D7%A1%D7%A4%D7%A8%D7%99%D7%94.png",
       "images": []
     },
     {

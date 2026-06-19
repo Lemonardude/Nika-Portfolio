@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,6 @@
       <a href="index.html" class="logo">NIKA</a>
       <nav>
         <a href="index.html#works" class="nav-link">Works</a>
-        <a href="index.html#about" class="nav-link">About</a>
         <a href="mailto:hello@nika.com" class="nav-link">Contact</a>
       </nav>
     </div>
@@ -25,11 +24,15 @@
   <a href="index.html" class="back-btn">Back to works</a>
 
   <div class="project-header">
-    <h1 class="project-title" id="projectTitle">—</h1>
+    <h1 class="project-title" id="projectTitle" dir="auto">—</h1>
     <div class="project-meta" id="projectMeta"></div>
   </div>
 
-  <div class="project-description" id="projectDesc"></div>
+  <!-- docx text: shown first, before images -->
+  <div class="project-docx" id="projectDocx" dir="auto"></div>
+
+  <!-- info.json description: shown after docx -->
+  <div class="project-description" id="projectDesc" dir="auto"></div>
 
   <div class="project-images" id="projectImages"></div>
 

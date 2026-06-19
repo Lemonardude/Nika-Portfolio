@@ -7,7 +7,11 @@
       "Bash(Invoke-RestMethod http://localhost:3000/api/works)",
       "PowerShell(Invoke-WebRequest http://localhost:3000/api/works -UseBasicParsing | Select-Object -ExpandProperty Content | ConvertFrom-Json | Select-Object -ExpandProperty works | Select-Object -First 1 | ForEach-Object { \"name: $\\($_.name\\)\"; \"mainImage: $\\($_.mainImage\\)\"; \"images count: $\\($_.images.Count\\)\"; \"images[0]: $\\($_.images[0]\\)\" })",
       "PowerShell(cd \"d:\\\\Projects\\\\Nika Portfolio\"; node build.js; Write-Host \"---\"; Get-Content manifest.json | ConvertFrom-Json | Select-Object -ExpandProperty works | Select-Object name, isBig, @{n='extraImages';e={$_.images.Count}})",
-      "PowerShell(cd \"d:\\\\Projects\\\\Nika Portfolio\"; Get-Content manifest.json | ConvertFrom-Json | Select-Object -ExpandProperty works | Select-Object name, isBig, @{n='extras';e={$_.images.Count}} | Format-Table -AutoSize)"
+      "PowerShell(cd \"d:\\\\Projects\\\\Nika Portfolio\"; Get-Content manifest.json | ConvertFrom-Json | Select-Object -ExpandProperty works | Select-Object name, isBig, @{n='extras';e={$_.images.Count}} | Format-Table -AutoSize)",
+      "Bash(node -e ' *)",
+      "Bash(node build.js)",
+      "Bash(node -e \"const m=require\\('./manifest.json'\\); const s=m.works.find\\(w=>w.name==='סקיצה'\\); console.log\\(JSON.stringify\\(s,null,2\\)\\)\")",
+      "Bash(node -e \"const m=require\\('./manifest.json'\\); console.log\\('Featured:', m.works.filter\\(w=>w.featured\\).map\\(w=>w.name\\)\\)\")"
     ]
   }
 }

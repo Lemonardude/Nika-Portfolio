@@ -1,6 +1,7 @@
 const express = require('express');
 const fs      = require('fs');
 const path    = require('path');
+const mammoth = require('mammoth');
 
 const app        = express();
 const PORT       = 3000;
@@ -19,31 +20,31 @@ function numSort(a, b) {
   return a.localeCompare(b, undefined, { sensitivity: 'base', numeric: true });
 }
 
-app.get('/api/works', (req, res) => {
-  if (!fs.existsSync(IMAGES_DIR)) return res.json({ works: [] });
-
-  let featuredNames = [];
+app.get('/api/works', async (req, res) => {
   try {
-    const fp = path.join(__dirname, 'featured.json');
-    if (fs.existsSync(fp)) featuredNames = JSON.parse(fs.readFileSync(fp, 'utf-8'));
-  } catch {}
+    if (!fs.existsSync(IMAGES_DIR)) return res.json({ works: [] });
 
-  const folders = fs
-    .readdirSync(IMAGES_DIR, { withFileTypes: true })
-    .filter(d => d.isDirectory())
-    .sort((a, b) => numSort(a.name, b.name));
+    let featuredNames = [];
+    try {
+      const fp = path.join(__dirname, 'featured.json');
+      if (fs.existsSync(fp)) featuredNames = JSON.parse(fs.readFileSync(fp, 'utf-8'));
+    } catch {}
 
-  const works = folders
-    .map((dirent, index) => {
-      const name   = dirent.name;
-      const folder = path.join(IMAGES_DIR, name);
-      const files  = fs.readdirSync(folder);
-      const enc    = s => encodeURIComponent(s);
+    const folders = fs
+      .readdirSync(IMAGES_DIR, { withFileTypes: true })
+      .filter(d => d.isDirectory())
+      .sort((a, b) => numSort(a.name, b.name));
+
+    const works = (await Promise.all(folders.map(async (dirent, index) => {
+      const name    = dirent.name;
+      const folder  = path.join(IMAGES_DIR, name);
+      const files   = fs.readdirSync(folder);
+      const enc     = s => encodeURIComponent(s);
       const urlBase = `images/${enc(name)}`;
 
       let mainFile = files.find(f => /^main\./i.test(f) && IMAGE_EXT.test(f));
       if (!mainFile) {
-        mainFile = files.filter(f => IMAGE_EXT.test(f)).sort(numSort)[0] || null;
+        mainFile = files.filter(f => IMAGE_EXT.test(f)).sort(numSort)[0] ?? null;
       }
       if (!mainFile) return null;
 
@@ -58,6 +59,15 @@ app.get('/api/works', (req, res) => {
         try { info = JSON.parse(fs.readFileSync(infoPath, 'utf-8')); } catch {}
       }
 
+      let docxText = '';
+      const docxFile = files.find(f => /\.docx$/i.test(f));
+      if (docxFile) {
+        try {
+          const result = await mammoth.extractRawText({ path: path.join(folder, docxFile) });
+          docxText = result.value.trim().replace(/\n{3,}/g, '\n\n');
+        } catch {}
+      }
+
       return {
         index,
         name,
@@ -65,26 +75,31 @@ app.get('/api/works', (req, res) => {
         isBig:     additionalMedia.length > 0,
         mainImage: `${urlBase}/${enc(mainFile)}`,
         images:    additionalMedia,
+        ...(docxText && { docxText }),
         ...info
       };
-    })
-    .filter(Boolean);
+    }))).filter(Boolean);
 
-  works.sort((a, b) => {
-    const fi = featuredNames.indexOf(a.name);
-    const fj = featuredNames.indexOf(b.name);
-    if (fi !== -1 && fj !== -1) return fi - fj;
-    if (fi !== -1) return -1;
-    if (fj !== -1) return 1;
-    return 0;
-  });
+    works.sort((a, b) => {
+      const fi = featuredNames.indexOf(a.name);
+      const fj = featuredNames.indexOf(b.name);
+      if (fi !== -1 && fj !== -1) return fi - fj;
+      if (fi !== -1) return -1;
+      if (fj !== -1) return 1;
+      return 0;
+    });
 
-  res.json({ works });
+    res.json({ works });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to load works' });
+  }
 });
 
 app.listen(PORT, () => {
   console.log('\n  Portfolio running at http://localhost:' + PORT + '\n');
-  console.log('  · Edit featured.json to set the 3 fullscreen hero works');
+  console.log('  · Edit featured.json to set fullscreen hero works');
   console.log('  · Name files 1.jpg, 2.jpg … inside each folder for ordering');
-  console.log('  · Add info.json for description, year, category, client\n');
+  console.log('  · Add info.json for year, category, client');
+  console.log('  · Add a .docx file for the project description text\n');
 });

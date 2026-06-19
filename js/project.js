@@ -20,13 +20,16 @@ async function loadProject() {
     if (idx === -1) { window.location.href = 'index.html'; return; }
 
     const work = works[idx];
-    const prev = idx > 0              ? works[idx - 1] : null;
+    const prev = idx > 0               ? works[idx - 1] : null;
     const next = idx < works.length - 1 ? works[idx + 1] : null;
 
-    document.title = `${work.name} — Nika`;
-    document.getElementById('projectTitle').textContent = work.name;
+    const displayName = work.displayName || work.name;
+    document.title = `${displayName} — Nika`;
 
-    // ── Meta: year, category, client
+    // ── Title (dir="auto" already on the element in HTML)
+    document.getElementById('projectTitle').textContent = displayName;
+
+    // ── Meta rows
     const metaEl     = document.getElementById('projectMeta');
     const metaFields = [
       ['Year',     work.year],
@@ -37,15 +40,28 @@ async function loadProject() {
     metaEl.innerHTML = metaFields.map(([l, v]) => `
       <div class="meta-row">
         <span class="meta-label">${esc(l)}</span>
-        <span class="meta-value">${esc(v)}</span>
+        <span class="meta-value" dir="auto">${esc(v)}</span>
       </div>`).join('');
 
-    // ── Description (from info.json)
+    // ── Docx text (primary description from .docx file — shown first)
+    const docxEl = document.getElementById('projectDocx');
+    if (work.docxText) {
+      const paras = work.docxText.split('\n').map(s => s.trim()).filter(Boolean);
+      docxEl.innerHTML = paras.map(p => `<p>${esc(p)}</p>`).join('');
+    }
+
+    // ── info.json description (secondary detail)
     const descEl = document.getElementById('projectDesc');
     if (work.description) {
-      descEl.innerHTML = `<p>${esc(work.description)}</p>`;
-    } else {
-      descEl.style.display = 'none';
+      const paras = work.description.split('\n').map(s => s.trim()).filter(Boolean);
+      descEl.innerHTML = paras.map(p => `<p>${esc(p)}</p>`).join('');
+    }
+
+    // Add border-bottom separator only when there's any text content before images
+    const hasText = work.docxText || work.description;
+    if (!hasText) {
+      docxEl.style.display  = 'none';
+      descEl.style.display  = 'none';
     }
 
     // ── Media: main first, then numerically sorted files (deduplicated)
@@ -61,21 +77,21 @@ async function loadProject() {
     if (work.isBig) {
       buildFullscreen(all, work.name, imagesEl);
     } else {
-      buildMosaic(all, work.name, imagesEl);
+      buildSmall(all, work.name, imagesEl);
     }
 
-    // ── Prev / next navigation
+    // ── Prev / next
     document.getElementById('projectNav').innerHTML = `
       ${prev
         ? `<a href="project.html?work=${encodeURIComponent(prev.name)}" class="p-nav-link">
              <span class="p-nav-dir">← Previous</span>
-             <span class="p-nav-name">${esc(prev.name)}</span>
+             <span class="p-nav-name" dir="auto">${esc(prev.name)}</span>
            </a>`
         : '<span></span>'}
       ${next
         ? `<a href="project.html?work=${encodeURIComponent(next.name)}" class="p-nav-link is-next">
              <span class="p-nav-dir">Next →</span>
-             <span class="p-nav-name">${esc(next.name)}</span>
+             <span class="p-nav-name" dir="auto">${esc(next.name)}</span>
            </a>`
         : '<span></span>'}
     `;
@@ -86,7 +102,7 @@ async function loadProject() {
   }
 }
 
-// Big works: each image/video fills the full viewport height
+// Big works: each image/video fills the full viewport height, centered
 function buildFullscreen(media, name, container) {
   container.className = 'project-fullscreen';
   media.forEach((src, i) => {
@@ -97,37 +113,43 @@ function buildFullscreen(media, name, container) {
   });
 }
 
-// Small works: 2-column mosaic at natural proportions
-function buildMosaic(media, name, container) {
-  container.className = 'project-mosaic';
-  media.forEach((src, i) => {
-    const wrap = document.createElement('div');
-    wrap.className = 'p-img';
+// Small works: single image centered, or 2-col mosaic for multiple
+function buildSmall(media, name, container) {
+  if (media.length === 1) {
+    // Single image: centered, max-width container
+    container.className = 'project-single';
+    container.appendChild(makeMedia(media[0], name, 0));
+  } else {
+    // Multiple images: 2-column mosaic
+    container.className = 'project-mosaic';
+    media.forEach((src, i) => {
+      const wrap = document.createElement('div');
+      wrap.className = 'p-img';
 
-    if (VIDEO_RE.test(src)) {
-      wrap.classList.add('wide');
-    } else {
-      const img = makeMedia(src, name, i);
-      img.addEventListener('load', () => {
-        if (img.naturalWidth / img.naturalHeight > 1.4) wrap.classList.add('wide');
-      });
-      wrap.appendChild(img);
+      if (VIDEO_RE.test(src)) {
+        wrap.classList.add('wide');
+        wrap.appendChild(makeMedia(src, name, i));
+      } else {
+        const img = makeMedia(src, name, i);
+        // Detect wide images and span them across both columns
+        img.addEventListener('load', () => {
+          if (img.naturalWidth / img.naturalHeight > 1.4) wrap.classList.add('wide');
+        });
+        wrap.appendChild(img);
+      }
+
       container.appendChild(wrap);
-      return;
-    }
-
-    wrap.appendChild(makeMedia(src, name, i));
-    container.appendChild(wrap);
-  });
+    });
+  }
 }
 
 function makeMedia(src, name, i) {
   if (VIDEO_RE.test(src)) {
-    const v = document.createElement('video');
-    v.src       = src;
-    v.controls  = true;
+    const v       = document.createElement('video');
+    v.src         = src;
+    v.controls    = true;
     v.playsInline = true;
-    v.preload   = 'metadata';
+    v.preload     = 'metadata';
     return v;
   }
   const img   = document.createElement('img');

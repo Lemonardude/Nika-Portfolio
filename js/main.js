@@ -29,13 +29,13 @@ async function loadWorks() {
 
       const img = document.createElement('img');
       img.src     = work.mainImage;
-      img.alt     = work.name;
+      img.alt     = work.displayName || work.name;
       img.loading = i === 0 ? 'eager' : 'lazy';
 
       const overlay = document.createElement('div');
       overlay.className = 'featured-overlay';
       overlay.innerHTML = `
-        <h2 class="featured-title">${esc(work.name)}</h2>
+        <h2 class="featured-title">${esc(work.displayName || work.name)}</h2>
         <span class="featured-cta">View Project →</span>
       `;
 
@@ -50,17 +50,17 @@ async function loadWorks() {
       const a = document.createElement('a');
       a.className = 'mosaic-tile';
       a.href = `project.html?work=${encodeURIComponent(work.name)}`;
-      a.setAttribute('aria-label', work.name);
+      a.setAttribute('aria-label', work.displayName || work.name);
 
       const img = document.createElement('img');
       img.src     = work.mainImage;
-      img.alt     = work.name;
-      img.loading = i < 9 ? 'lazy' : 'lazy';
+      img.alt     = work.displayName || work.name;
+      img.loading = 'lazy';
       img.decoding = 'async';
 
       const overlay = document.createElement('div');
       overlay.className = 'mosaic-overlay';
-      overlay.innerHTML = `<span class="mosaic-name">${esc(work.name)}</span>`;
+      overlay.innerHTML = `<span class="mosaic-name">${esc(work.displayName || work.name)}</span>`;
 
       a.appendChild(img);
       a.appendChild(overlay);
