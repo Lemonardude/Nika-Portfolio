@@ -18,7 +18,9 @@
       "PowerShell($bytes = [System.IO.File]::ReadAllBytes\\(\"d:\\\\Projects\\\\Nika Portfolio\\\\images\\\\Brush Bunny\\\\main.png\"\\) | Select-Object -First 8; $bytes | ForEach-Object { \"0x{0:X2}\" -f $_ })",
       "PowerShell(try { $r = Invoke-WebRequest \"http://localhost:3000/images/Brush%20Bunny/main.png\" -UseBasicParsing; \"Status: $\\($r.StatusCode\\), Size: $\\($r.RawContentLength\\)\" } catch { \"Error: $_\" })",
       "PowerShell($m = Get-Content \"d:\\\\Projects\\\\Nika Portfolio\\\\manifest.json\" | ConvertFrom-Json; $b = $m.works | Where-Object { $_.name -eq \"Brush Bunny\" }; $b.mainImage)",
-      "PowerShell($m = Get-Content \"d:\\\\Projects\\\\Nika Portfolio\\\\manifest.json\" | ConvertFrom-Json; $w = $m.works | Where-Object { $_.name -eq \"עשן הזמן\" }; $w.mainImage)"
+      "PowerShell($m = Get-Content \"d:\\\\Projects\\\\Nika Portfolio\\\\manifest.json\" | ConvertFrom-Json; $w = $m.works | Where-Object { $_.name -eq \"עשן הזמן\" }; $w.mainImage)",
+      "Bash(Start-Process \"http://localhost:3000\")",
+      "PowerShell($p = Get-NetTCPConnection -LocalPort 3000 -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess -First 1; if \\($p\\) { Stop-Process -Id $p -Force; \"Killed PID $p\" } else { \"No process on 3000\" })"
     ]
   }
 }

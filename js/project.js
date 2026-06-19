@@ -74,7 +74,7 @@ async function loadProject() {
 
     const imagesEl = document.getElementById('projectImages');
 
-    if (work.isBig) {
+    if (work.featured) {
       buildFullscreen(all, work.name, imagesEl);
     } else {
       buildSmall(all, work.name, imagesEl);
