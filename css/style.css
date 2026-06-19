@@ -382,6 +382,7 @@ nav { display: flex; gap: 2.5rem; }
   height: auto;
   display: block;
   outline: none;
+  margin: 0 auto;
 }
 
 /* ── Prev / next ───────────────────────────────────────── */
