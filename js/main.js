@@ -1,5 +1,6 @@
-const container = document.getElementById('worksGrid');
-const header    = document.getElementById('siteHeader');
+const header      = document.getElementById('siteHeader');
+const featuredEl  = document.getElementById('featuredSection');
+const mosaicEl    = document.getElementById('mosaicGrid');
 
 window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 60);
@@ -8,69 +9,73 @@ window.addEventListener('scroll', () => {
 async function loadWorks() {
   try {
     const res = await fetch('manifest.json');
-    if (!res.ok) throw new Error('manifest not found');
+    if (!res.ok) throw new Error();
     const { works } = await res.json();
 
-    if (!works || works.length === 0) {
-      container.innerHTML = '<p class="state-msg">No works found — add image folders inside the <code>images/</code> directory.</p>';
+    if (!works?.length) {
+      featuredEl.innerHTML = '<p class="state-msg">No works found — add folders to images/ and run BUILD.bat</p>';
       return;
     }
 
-    container.innerHTML = '';
+    const featured = works.filter(w => w.featured);
+    const rest     = works.filter(w => !w.featured);
 
-    const bigWorks   = works.filter(w => w.isBig);
-    const smallWorks = works.filter(w => !w.isBig);
+    // ── Featured: fullscreen hero items
+    featuredEl.innerHTML = '';
+    featured.forEach((work, i) => {
+      const a = document.createElement('a');
+      a.className = 'featured-item';
+      a.href = `project.html?work=${encodeURIComponent(work.name)}`;
 
-    // ── Big works — one per full row
-    if (bigWorks.length) {
-      const bigGrid = document.createElement('div');
-      bigGrid.className = 'big-grid';
-      bigWorks.forEach((work, i) => bigGrid.appendChild(makeCard(work, i, true)));
-      container.appendChild(bigGrid);
-    }
+      const img = document.createElement('img');
+      img.src     = work.mainImage;
+      img.alt     = work.name;
+      img.loading = i === 0 ? 'eager' : 'lazy';
 
-    // ── Small works — 3 per row
-    if (smallWorks.length) {
-      if (bigWorks.length) {
-        const divider = document.createElement('div');
-        divider.className = 'works-divider';
-        divider.innerHTML = '<span>More Works</span>';
-        container.appendChild(divider);
-      }
-      const smallGrid = document.createElement('div');
-      smallGrid.className = 'small-grid';
-      smallWorks.forEach((work, i) => smallGrid.appendChild(makeCard(work, i, false)));
-      container.appendChild(smallGrid);
-    }
+      const overlay = document.createElement('div');
+      overlay.className = 'featured-overlay';
+      overlay.innerHTML = `
+        <h2 class="featured-title">${esc(work.name)}</h2>
+        <span class="featured-cta">View Project →</span>
+      `;
+
+      a.appendChild(img);
+      a.appendChild(overlay);
+      featuredEl.appendChild(a);
+    });
+
+    // ── Mosaic: all other works at natural image proportions
+    mosaicEl.innerHTML = '';
+    rest.forEach((work, i) => {
+      const a = document.createElement('a');
+      a.className = 'mosaic-tile';
+      a.href = `project.html?work=${encodeURIComponent(work.name)}`;
+      a.setAttribute('aria-label', work.name);
+
+      const img = document.createElement('img');
+      img.src     = work.mainImage;
+      img.alt     = work.name;
+      img.loading = i < 9 ? 'lazy' : 'lazy';
+      img.decoding = 'async';
+
+      const overlay = document.createElement('div');
+      overlay.className = 'mosaic-overlay';
+      overlay.innerHTML = `<span class="mosaic-name">${esc(work.name)}</span>`;
+
+      a.appendChild(img);
+      a.appendChild(overlay);
+      mosaicEl.appendChild(a);
+    });
 
   } catch {
-    container.innerHTML = '<p class="state-msg">Could not load works — run <code>npm run build</code> first.</p>';
+    featuredEl.innerHTML = '<p class="state-msg">Could not load works — run BUILD.bat first</p>';
   }
 }
 
-function makeCard(work, i, isBig) {
-  const num  = String(i + 1).padStart(2, '0');
-  const card = document.createElement('a');
-  card.className = 'work-card' + (isBig ? ' is-big' : '');
-  card.href = `project.html?work=${encodeURIComponent(work.name)}`;
-  card.setAttribute('aria-label', work.name);
-
-  card.innerHTML = `
-    <div class="card-img">
-      <img src="${work.mainImage}" alt="${escHtml(work.name)}" loading="${i < 3 ? 'eager' : 'lazy'}">
-    </div>
-    <div class="card-panel">
-      <span class="card-num">${num}</span>
-      <h2 class="card-title">${escHtml(work.name)}</h2>
-      <span class="card-cta">View Project</span>
-    </div>
-  `;
-
-  return card;
-}
-
-function escHtml(str) {
-  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+function esc(str) {
+  return String(str)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
 loadWorks();

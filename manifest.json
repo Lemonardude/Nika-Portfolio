@@ -1,22 +1,9 @@
 {
   "works": [
     {
-      "index": 0,
-      "name": "_סקיצה_",
-      "isBig": false,
-      "mainImage": "images/_%D7%A1%D7%A7%D7%99%D7%A6%D7%94_/main.jpg",
-      "images": []
-    },
-    {
-      "index": 1,
-      "name": "DAVID HOCKNEY",
-      "isBig": false,
-      "mainImage": "images/DAVID%20HOCKNEY/main.png",
-      "images": []
-    },
-    {
-      "index": 2,
+      "index": 3,
       "name": "FLASHBACK",
+      "featured": true,
       "isBig": true,
       "mainImage": "images/FLASHBACK/main.png",
       "images": [
@@ -26,17 +13,9 @@
       ]
     },
     {
-      "index": 3,
-      "name": "LADIES FIRST - קבוצת רובוטיקה נשים",
-      "isBig": true,
-      "mainImage": "images/LADIES%20FIRST%20-%20%D7%A7%D7%91%D7%95%D7%A6%D7%AA%20%D7%A8%D7%95%D7%91%D7%95%D7%98%D7%99%D7%A7%D7%94%20%D7%A0%D7%A9%D7%99%D7%9D/main.jpg",
-      "images": [
-        "images/LADIES%20FIRST%20-%20%D7%A7%D7%91%D7%95%D7%A6%D7%AA%20%D7%A8%D7%95%D7%91%D7%95%D7%98%D7%99%D7%A7%D7%94%20%D7%A0%D7%A9%D7%99%D7%9D/%D7%9C%D7%95%D7%92%D7%95%20%D7%9C%D7%A7%D7%91%D7%95%D7%A6%D7%AA%20%D7%A8%D7%95%D7%91%D7%95%D7%98%D7%99%D7%A7%D7%94%20%D7%A9%D7%9C%20%D7%A0%D7%A9%D7%99%D7%9D.jpg"
-      ]
-    },
-    {
-      "index": 4,
+      "index": 5,
       "name": "mirage",
+      "featured": true,
       "isBig": true,
       "mainImage": "images/mirage/main.png",
       "images": [
@@ -54,75 +33,9 @@
       ]
     },
     {
-      "index": 5,
-      "name": "MYMEALS",
-      "isBig": false,
-      "mainImage": "images/MYMEALS/main.jpg",
-      "images": []
-    },
-    {
-      "index": 6,
-      "name": "seasalt עיצוב לוגו ואפליקציית הזמנות",
-      "isBig": false,
-      "mainImage": "images/seasalt%20%D7%A2%D7%99%D7%A6%D7%95%D7%91%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%99%D7%AA%20%D7%94%D7%96%D7%9E%D7%A0%D7%95%D7%AA/main.jpg",
-      "images": []
-    },
-    {
-      "index": 7,
-      "name": "walking on a dream",
-      "isBig": true,
-      "mainImage": "images/walking%20on%20a%20dream/main.png",
-      "images": [
-        "images/walking%20on%20a%20dream/walking%20on%20a%20dream%20eye.mp4"
-      ]
-    },
-    {
-      "index": 8,
-      "name": "הקולב",
-      "isBig": false,
-      "mainImage": "images/%D7%94%D7%A7%D7%95%D7%9C%D7%91/main.jpg",
-      "images": []
-    },
-    {
-      "index": 9,
-      "name": "לוגו מפיקת אירועים",
-      "isBig": false,
-      "mainImage": "images/%D7%9C%D7%95%D7%92%D7%95%20%D7%9E%D7%A4%D7%99%D7%A7%D7%AA%20%D7%90%D7%99%D7%A8%D7%95%D7%A2%D7%99%D7%9D/main.jpg",
-      "images": []
-    },
-    {
-      "index": 10,
-      "name": "מכללה טכנולוגית- אגודת הסטודנטים",
-      "isBig": false,
-      "mainImage": "images/%D7%9E%D7%9B%D7%9C%D7%9C%D7%94%20%D7%98%D7%9B%D7%A0%D7%95%D7%9C%D7%95%D7%92%D7%99%D7%AA-%20%D7%90%D7%92%D7%95%D7%93%D7%AA%20%D7%94%D7%A1%D7%98%D7%95%D7%93%D7%A0%D7%98%D7%99%D7%9D/main.png",
-      "images": []
-    },
-    {
-      "index": 11,
-      "name": "משחק פוקר",
-      "isBig": false,
-      "mainImage": "images/%D7%9E%D7%A9%D7%97%D7%A7%20%D7%A4%D7%95%D7%A7%D7%A8/main.png",
-      "images": []
-    },
-    {
-      "index": 12,
-      "name": "ספר ביוגרפיה יאיו קוסמה",
-      "isBig": false,
-      "mainImage": "images/%D7%A1%D7%A4%D7%A8%20%D7%91%D7%99%D7%95%D7%92%D7%A8%D7%A4%D7%99%D7%94%20%D7%99%D7%90%D7%99%D7%95%20%D7%A7%D7%95%D7%A1%D7%9E%D7%94/main.jpg",
-      "images": []
-    },
-    {
-      "index": 13,
-      "name": "עיצוב פרסום ומיתוג למסיבת טכנו",
-      "isBig": true,
-      "mainImage": "images/%D7%A2%D7%99%D7%A6%D7%95%D7%91%20%D7%A4%D7%A8%D7%A1%D7%95%D7%9D%20%D7%95%D7%9E%D7%99%D7%AA%D7%95%D7%92%20%D7%9C%D7%9E%D7%A1%D7%99%D7%91%D7%AA%20%D7%98%D7%9B%D7%A0%D7%95/main.png",
-      "images": [
-        "images/%D7%A2%D7%99%D7%A6%D7%95%D7%91%20%D7%A4%D7%A8%D7%A1%D7%95%D7%9D%20%D7%95%D7%9E%D7%99%D7%AA%D7%95%D7%92%20%D7%9C%D7%9E%D7%A1%D7%99%D7%91%D7%AA%20%D7%98%D7%9B%D7%A0%D7%95/%D7%90%D7%A8%D7%99%D7%96%D7%94.JPG"
-      ]
-    },
-    {
-      "index": 15,
+      "index": 16,
       "name": "עשן הזמן",
+      "featured": true,
       "isBig": true,
       "mainImage": "images/%D7%A2%D7%A9%D7%9F%20%D7%94%D7%96%D7%9E%D7%9F/main.png",
       "images": [
@@ -131,8 +44,133 @@
       ]
     },
     {
-      "index": 16,
+      "index": 0,
+      "name": "_סקיצה_",
+      "featured": false,
+      "isBig": false,
+      "mainImage": "images/_%D7%A1%D7%A7%D7%99%D7%A6%D7%94_/main.jpg",
+      "images": []
+    },
+    {
+      "index": 1,
+      "name": "Brush Bunny",
+      "featured": false,
+      "isBig": true,
+      "mainImage": "images/Brush%20Bunny/Main.png",
+      "images": [
+        "images/Brush%20Bunny/1.png",
+        "images/Brush%20Bunny/2.png",
+        "images/Brush%20Bunny/3.png",
+        "images/Brush%20Bunny/4.png",
+        "images/Brush%20Bunny/5.png"
+      ]
+    },
+    {
+      "index": 2,
+      "name": "DAVID HOCKNEY",
+      "featured": false,
+      "isBig": false,
+      "mainImage": "images/DAVID%20HOCKNEY/main.png",
+      "images": []
+    },
+    {
+      "index": 4,
+      "name": "LADIES FIRST - קבוצת רובוטיקה נשים",
+      "featured": false,
+      "isBig": true,
+      "mainImage": "images/LADIES%20FIRST%20-%20%D7%A7%D7%91%D7%95%D7%A6%D7%AA%20%D7%A8%D7%95%D7%91%D7%95%D7%98%D7%99%D7%A7%D7%94%20%D7%A0%D7%A9%D7%99%D7%9D/main.jpg",
+      "images": [
+        "images/LADIES%20FIRST%20-%20%D7%A7%D7%91%D7%95%D7%A6%D7%AA%20%D7%A8%D7%95%D7%91%D7%95%D7%98%D7%99%D7%A7%D7%94%20%D7%A0%D7%A9%D7%99%D7%9D/%D7%9C%D7%95%D7%92%D7%95%20%D7%9C%D7%A7%D7%91%D7%95%D7%A6%D7%AA%20%D7%A8%D7%95%D7%91%D7%95%D7%98%D7%99%D7%A7%D7%94%20%D7%A9%D7%9C%20%D7%A0%D7%A9%D7%99%D7%9D.jpg"
+      ]
+    },
+    {
+      "index": 6,
+      "name": "MYMEALS",
+      "featured": false,
+      "isBig": false,
+      "mainImage": "images/MYMEALS/main.jpg",
+      "images": []
+    },
+    {
+      "index": 7,
+      "name": "seasalt עיצוב לוגו ואפליקציית הזמנות",
+      "featured": false,
+      "isBig": false,
+      "mainImage": "images/seasalt%20%D7%A2%D7%99%D7%A6%D7%95%D7%91%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%99%D7%AA%20%D7%94%D7%96%D7%9E%D7%A0%D7%95%D7%AA/main.jpg",
+      "images": []
+    },
+    {
+      "index": 8,
+      "name": "walking on a dream",
+      "featured": false,
+      "isBig": true,
+      "mainImage": "images/walking%20on%20a%20dream/main.png",
+      "images": [
+        "images/walking%20on%20a%20dream/walking%20on%20a%20dream%20eye.mp4"
+      ]
+    },
+    {
+      "index": 9,
+      "name": "הקולב",
+      "featured": false,
+      "isBig": false,
+      "mainImage": "images/%D7%94%D7%A7%D7%95%D7%9C%D7%91/main.jpg",
+      "images": []
+    },
+    {
+      "index": 10,
+      "name": "לוגו מפיקת אירועים",
+      "featured": false,
+      "isBig": false,
+      "mainImage": "images/%D7%9C%D7%95%D7%92%D7%95%20%D7%9E%D7%A4%D7%99%D7%A7%D7%AA%20%D7%90%D7%99%D7%A8%D7%95%D7%A2%D7%99%D7%9D/main.jpg",
+      "images": []
+    },
+    {
+      "index": 11,
+      "name": "מכללה טכנולוגית- אגודת הסטודנטים",
+      "featured": false,
+      "isBig": false,
+      "mainImage": "images/%D7%9E%D7%9B%D7%9C%D7%9C%D7%94%20%D7%98%D7%9B%D7%A0%D7%95%D7%9C%D7%95%D7%92%D7%99%D7%AA-%20%D7%90%D7%92%D7%95%D7%93%D7%AA%20%D7%94%D7%A1%D7%98%D7%95%D7%93%D7%A0%D7%98%D7%99%D7%9D/main.png",
+      "images": []
+    },
+    {
+      "index": 12,
+      "name": "משחק פוקר",
+      "featured": false,
+      "isBig": false,
+      "mainImage": "images/%D7%9E%D7%A9%D7%97%D7%A7%20%D7%A4%D7%95%D7%A7%D7%A8/main.png",
+      "images": []
+    },
+    {
+      "index": 13,
+      "name": "ספר ביוגרפיה יאיו קוסמה",
+      "featured": false,
+      "isBig": false,
+      "mainImage": "images/%D7%A1%D7%A4%D7%A8%20%D7%91%D7%99%D7%95%D7%92%D7%A8%D7%A4%D7%99%D7%94%20%D7%99%D7%90%D7%99%D7%95%20%D7%A7%D7%95%D7%A1%D7%9E%D7%94/main.jpg",
+      "images": []
+    },
+    {
+      "index": 14,
+      "name": "עיצוב פרסום ומיתוג למסיבת טכנו",
+      "featured": false,
+      "isBig": true,
+      "mainImage": "images/%D7%A2%D7%99%D7%A6%D7%95%D7%91%20%D7%A4%D7%A8%D7%A1%D7%95%D7%9D%20%D7%95%D7%9E%D7%99%D7%AA%D7%95%D7%92%20%D7%9C%D7%9E%D7%A1%D7%99%D7%91%D7%AA%20%D7%98%D7%9B%D7%A0%D7%95/main.png",
+      "images": [
+        "images/%D7%A2%D7%99%D7%A6%D7%95%D7%91%20%D7%A4%D7%A8%D7%A1%D7%95%D7%9D%20%D7%95%D7%9E%D7%99%D7%AA%D7%95%D7%92%20%D7%9C%D7%9E%D7%A1%D7%99%D7%91%D7%AA%20%D7%98%D7%9B%D7%A0%D7%95/%D7%90%D7%A8%D7%99%D7%96%D7%94.JPG"
+      ]
+    },
+    {
+      "index": 15,
+      "name": "עיצובים להזמנות בסושיאל לאירועים בספריה",
+      "featured": false,
+      "isBig": false,
+      "mainImage": "images/%D7%A2%D7%99%D7%A6%D7%95%D7%91%D7%99%D7%9D%20%D7%9C%D7%94%D7%96%D7%9E%D7%A0%D7%95%D7%AA%20%D7%91%D7%A1%D7%95%D7%A9%D7%99%D7%90%D7%9C%20%D7%9C%D7%90%D7%99%D7%A8%D7%95%D7%A2%D7%99%D7%9D%20%D7%91%D7%A1%D7%A4%D7%A8%D7%99%D7%94/main.png",
+      "images": []
+    },
+    {
+      "index": 17,
       "name": "פוסטרים - איכות הסביבה",
+      "featured": false,
       "isBig": false,
       "mainImage": "images/%D7%A4%D7%95%D7%A1%D7%98%D7%A8%D7%99%D7%9D%20-%20%D7%90%D7%99%D7%9B%D7%95%D7%AA%20%D7%94%D7%A1%D7%91%D7%99%D7%91%D7%94/main.jpg",
       "images": []

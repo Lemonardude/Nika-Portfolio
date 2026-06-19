@@ -16,21 +16,17 @@ async function loadProject() {
     if (!res.ok) throw new Error();
     const { works } = await res.json();
 
-    // Same display order as the grid: big works first, then small
-    const sorted = [...works.filter(w => w.isBig), ...works.filter(w => !w.isBig)];
-    const idx    = sorted.findIndex(w => w.name === workName);
+    const idx  = works.findIndex(w => w.name === workName);
     if (idx === -1) { window.location.href = 'index.html'; return; }
 
-    const work = sorted[idx];
-    const prev = idx > 0              ? sorted[idx - 1] : null;
-    const next = idx < sorted.length - 1 ? sorted[idx + 1] : null;
+    const work = works[idx];
+    const prev = idx > 0              ? works[idx - 1] : null;
+    const next = idx < works.length - 1 ? works[idx + 1] : null;
 
     document.title = `${work.name} — Nika`;
-
-    // ── Title
     document.getElementById('projectTitle').textContent = work.name;
 
-    // ── Meta (year, category, client + any extra info.json fields)
+    // ── Meta: year, category, client
     const metaEl     = document.getElementById('projectMeta');
     const metaFields = [
       ['Year',     work.year],
@@ -38,14 +34,13 @@ async function loadProject() {
       ['Client',   work.client],
     ].filter(([, v]) => v);
 
-    metaEl.innerHTML = metaFields.map(([label, value]) => `
+    metaEl.innerHTML = metaFields.map(([l, v]) => `
       <div class="meta-row">
-        <span class="meta-label">${esc(label)}</span>
-        <span class="meta-value">${esc(value)}</span>
-      </div>
-    `).join('');
+        <span class="meta-label">${esc(l)}</span>
+        <span class="meta-value">${esc(v)}</span>
+      </div>`).join('');
 
-    // ── Description
+    // ── Description (from info.json)
     const descEl = document.getElementById('projectDesc');
     if (work.description) {
       descEl.innerHTML = `<p>${esc(work.description)}</p>`;
@@ -53,7 +48,7 @@ async function loadProject() {
       descEl.style.display = 'none';
     }
 
-    // ── Media list: main first, then numbered files (deduplicated by URL)
+    // ── Media: main first, then numerically sorted files (deduplicated)
     const seen = new Set();
     const all  = [work.mainImage, ...work.images].filter(src => {
       if (seen.has(src)) return false;
@@ -69,7 +64,7 @@ async function loadProject() {
       buildMosaic(all, work.name, imagesEl);
     }
 
-    // ── Prev / next
+    // ── Prev / next navigation
     document.getElementById('projectNav').innerHTML = `
       ${prev
         ? `<a href="project.html?work=${encodeURIComponent(prev.name)}" class="p-nav-link">
@@ -91,70 +86,55 @@ async function loadProject() {
   }
 }
 
-// Big works: each media item fills 100vh
-function buildFullscreen(mediaList, name, container) {
+// Big works: each image/video fills the full viewport height
+function buildFullscreen(media, name, container) {
   container.className = 'project-fullscreen';
-
-  mediaList.forEach((src, i) => {
-    const section = document.createElement('div');
-    section.className = 'project-img project-img--full';
-
-    if (VIDEO_RE.test(src)) {
-      const v = document.createElement('video');
-      v.src       = src;
-      v.controls  = true;
-      v.playsInline = true;
-      v.preload   = 'metadata';
-      section.appendChild(v);
-    } else {
-      const img   = document.createElement('img');
-      img.src     = src;
-      img.alt     = `${name} — ${i + 1}`;
-      img.loading = i === 0 ? 'eager' : 'lazy';
-      section.appendChild(img);
-    }
-
-    container.appendChild(section);
+  media.forEach((src, i) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'project-img--full';
+    wrap.appendChild(makeMedia(src, name, i));
+    container.appendChild(wrap);
   });
 }
 
-// Small works: 2-column mosaic, wide images span full width
-function buildMosaic(mediaList, name, container) {
+// Small works: 2-column mosaic at natural proportions
+function buildMosaic(media, name, container) {
   container.className = 'project-mosaic';
-
-  mediaList.forEach((src, i) => {
-    const item = document.createElement('div');
-    item.className = 'project-img';
+  media.forEach((src, i) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'p-img';
 
     if (VIDEO_RE.test(src)) {
-      const v = document.createElement('video');
-      v.src       = src;
-      v.controls  = true;
-      v.playsInline = true;
-      v.preload   = 'metadata';
-      item.appendChild(v);
-      // Videos default to wide span
-      item.classList.add('wide');
+      wrap.classList.add('wide');
     } else {
-      const img   = document.createElement('img');
-      img.src     = src;
-      img.alt     = `${name} — ${i + 1}`;
-      img.loading = i < 2 ? 'eager' : 'lazy';
-
-      // After loading, span wide if landscape
-      const checkRatio = () => {
-        if (img.naturalWidth / img.naturalHeight > 1.4) {
-          item.classList.add('wide');
-        }
-      };
-      if (img.complete) checkRatio();
-      else img.addEventListener('load', checkRatio);
-
-      item.appendChild(img);
+      const img = makeMedia(src, name, i);
+      img.addEventListener('load', () => {
+        if (img.naturalWidth / img.naturalHeight > 1.4) wrap.classList.add('wide');
+      });
+      wrap.appendChild(img);
+      container.appendChild(wrap);
+      return;
     }
 
-    container.appendChild(item);
+    wrap.appendChild(makeMedia(src, name, i));
+    container.appendChild(wrap);
   });
+}
+
+function makeMedia(src, name, i) {
+  if (VIDEO_RE.test(src)) {
+    const v = document.createElement('video');
+    v.src       = src;
+    v.controls  = true;
+    v.playsInline = true;
+    v.preload   = 'metadata';
+    return v;
+  }
+  const img   = document.createElement('img');
+  img.src     = src;
+  img.alt     = `${name} — ${i + 1}`;
+  img.loading = i === 0 ? 'eager' : 'lazy';
+  return img;
 }
 
 function esc(str) {

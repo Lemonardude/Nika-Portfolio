@@ -1,10 +1,9 @@
-const fs = require('fs');
+const fs   = require('fs');
 const path = require('path');
 
 const IMAGES_DIR = path.join(__dirname, 'images');
 const OUT        = path.join(__dirname, 'manifest.json');
 const IMAGE_EXT  = /\.(jpg|jpeg|png|gif|webp|avif|svg)$/i;
-const VIDEO_EXT  = /\.(mp4|webm|mov|m4v|avi)$/i;
 const MEDIA_EXT  = /\.(jpg|jpeg|png|gif|webp|avif|svg|mp4|webm|mov|m4v|avi)$/i;
 
 if (!fs.existsSync(IMAGES_DIR)) {
@@ -12,7 +11,14 @@ if (!fs.existsSync(IMAGES_DIR)) {
   process.exit(1);
 }
 
-// Sort helper: numeric prefix first (01, 02…), then alphabetical
+// Read featured work names (controls which appear as fullscreen hero)
+let featuredNames = [];
+try {
+  const fp = path.join(__dirname, 'featured.json');
+  if (fs.existsSync(fp)) featuredNames = JSON.parse(fs.readFileSync(fp, 'utf-8'));
+} catch {}
+
+// Sort: numeric prefix first (01_, 02_…), then locale alphabetical
 function numSort(a, b) {
   const na = parseInt(a.match(/^(\d+)/)?.[1] ?? 'NaN');
   const nb = parseInt(b.match(/^(\d+)/)?.[1] ?? 'NaN');
@@ -33,18 +39,23 @@ const works = folders
     const folder = path.join(IMAGES_DIR, name);
     const files  = fs.readdirSync(folder);
 
-    const mainFile = files.find(f => /^main\./i.test(f) && IMAGE_EXT.test(f));
-    if (!mainFile) return null;
-
     const enc     = s => encodeURIComponent(s);
     const urlBase = `images/${enc(name)}`;
 
-    // All media except main, sorted numerically by filename
+    // Main image: prefer a file starting with "main." — fallback to first image
+    let mainFile = files.find(f => /^main\./i.test(f) && IMAGE_EXT.test(f));
+    if (!mainFile) {
+      mainFile = files.filter(f => IMAGE_EXT.test(f)).sort(numSort)[0] || null;
+    }
+    if (!mainFile) return null; // no image at all — skip
+
+    // Additional media: everything else (images + videos), sorted numerically
     const additionalMedia = files
-      .filter(f => !(/^main\./i.test(f)) && MEDIA_EXT.test(f))
+      .filter(f => f !== mainFile && MEDIA_EXT.test(f))
       .sort(numSort)
       .map(f => `${urlBase}/${enc(f)}`);
 
+    // Read info.json if present
     let info = {};
     const infoPath = path.join(folder, 'info.json');
     if (fs.existsSync(infoPath)) {
@@ -54,18 +65,32 @@ const works = folders
     return {
       index,
       name,
-      isBig: additionalMedia.length > 0,
+      featured:  featuredNames.includes(name),
+      isBig:     additionalMedia.length > 0,
       mainImage: `${urlBase}/${enc(mainFile)}`,
-      images: additionalMedia,
+      images:    additionalMedia,
       ...info
     };
   })
   .filter(Boolean);
 
+// Featured works appear in the order listed in featured.json
+works.sort((a, b) => {
+  const fi = featuredNames.indexOf(a.name);
+  const fj = featuredNames.indexOf(b.name);
+  if (fi !== -1 && fj !== -1) return fi - fj;
+  if (fi !== -1) return -1;
+  if (fj !== -1) return 1;
+  return 0;
+});
+
 fs.writeFileSync(OUT, JSON.stringify({ works }, null, 2), 'utf-8');
 
-const big   = works.filter(w => w.isBig).length;
-const small = works.filter(w => !w.isBig).length;
-console.log(`\n  manifest.json updated — ${works.length} work(s)  [${big} big · ${small} small]\n`);
-works.forEach(w => console.log(`  ${w.isBig ? '◆' : '·'} ${w.name}`));
-console.log('\n  Commit everything and push to GitHub.\n');
+const feat  = works.filter(w => w.featured).length;
+const big   = works.filter(w => !w.featured && w.isBig).length;
+const small = works.filter(w => !w.featured && !w.isBig).length;
+console.log(`\n  manifest.json — ${works.length} works  [★ ${feat} featured · ◆ ${big} big · · ${small} small]\n`);
+works.forEach(w =>
+  console.log(`  ${w.featured ? '★' : w.isBig ? '◆' : '·'} ${w.name}`)
+);
+console.log('\n  Edit featured.json to change which works appear fullscreen at top.\n');
