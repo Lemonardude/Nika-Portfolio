@@ -1,0 +1,132 @@
+{
+  "works": [
+    {
+      "index": 0,
+      "name": "mirage",
+      "isBig": true,
+      "mainImage": "images/mirage/main.png",
+      "images": [
+        "images/mirage/1.png",
+        "images/mirage/10.png",
+        "images/mirage/11.png",
+        "images/mirage/2.png",
+        "images/mirage/4.png",
+        "images/mirage/5.png",
+        "images/mirage/6.png",
+        "images/mirage/7.png",
+        "images/mirage/8.png",
+        "images/mirage/9.png"
+      ]
+    },
+    {
+      "index": 1,
+      "name": "MYMEALS",
+      "isBig": false,
+      "mainImage": "images/MYMEALS/main.jpg",
+      "images": []
+    },
+    {
+      "index": 2,
+      "name": "seasalt עיצוב לוגו ואפליקציית הזמנות",
+      "isBig": false,
+      "mainImage": "images/seasalt%20%D7%A2%D7%99%D7%A6%D7%95%D7%91%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%99%D7%AA%20%D7%94%D7%96%D7%9E%D7%A0%D7%95%D7%AA/main.jpg",
+      "images": []
+    },
+    {
+      "index": 3,
+      "name": "walking on a dream",
+      "isBig": false,
+      "mainImage": "images/walking%20on%20a%20dream/main.png",
+      "images": []
+    },
+    {
+      "index": 4,
+      "name": "הקולב",
+      "isBig": false,
+      "mainImage": "images/%D7%94%D7%A7%D7%95%D7%9C%D7%91/main.jpg",
+      "images": []
+    },
+    {
+      "index": 5,
+      "name": "לוגו מפיקת אירועים",
+      "isBig": false,
+      "mainImage": "images/%D7%9C%D7%95%D7%92%D7%95%20%D7%9E%D7%A4%D7%99%D7%A7%D7%AA%20%D7%90%D7%99%D7%A8%D7%95%D7%A2%D7%99%D7%9D/main.jpg",
+      "images": []
+    },
+    {
+      "index": 6,
+      "name": "מכללה טכנולוגית- אגודת הסטודנטים",
+      "isBig": false,
+      "mainImage": "images/%D7%9E%D7%9B%D7%9C%D7%9C%D7%94%20%D7%98%D7%9B%D7%A0%D7%95%D7%9C%D7%95%D7%92%D7%99%D7%AA-%20%D7%90%D7%92%D7%95%D7%93%D7%AA%20%D7%94%D7%A1%D7%98%D7%95%D7%93%D7%A0%D7%98%D7%99%D7%9D/main.png",
+      "images": []
+    },
+    {
+      "index": 7,
+      "name": "משחק פוקר",
+      "isBig": false,
+      "mainImage": "images/%D7%9E%D7%A9%D7%97%D7%A7%20%D7%A4%D7%95%D7%A7%D7%A8/main.png",
+      "images": []
+    },
+    {
+      "index": 8,
+      "name": "ספר ביוגרפיה יאיו קוסמה",
+      "isBig": false,
+      "mainImage": "images/%D7%A1%D7%A4%D7%A8%20%D7%91%D7%99%D7%95%D7%92%D7%A8%D7%A4%D7%99%D7%94%20%D7%99%D7%90%D7%99%D7%95%20%D7%A7%D7%95%D7%A1%D7%9E%D7%94/main.jpg",
+      "images": []
+    },
+    {
+      "index": 9,
+      "name": "סקיצה",
+      "isBig": false,
+      "mainImage": "images/%D7%A1%D7%A7%D7%99%D7%A6%D7%94/main.jpg",
+      "images": []
+    },
+    {
+      "index": 10,
+      "name": "עיצוב סמליל לקבוצת רובוטיקה של בנות",
+      "isBig": false,
+      "mainImage": "images/%D7%A2%D7%99%D7%A6%D7%95%D7%91%20%D7%A1%D7%9E%D7%9C%D7%99%D7%9C%20%D7%9C%D7%A7%D7%91%D7%95%D7%A6%D7%AA%20%D7%A8%D7%95%D7%91%D7%95%D7%98%D7%99%D7%A7%D7%94%20%D7%A9%D7%9C%20%D7%91%D7%A0%D7%95%D7%AA/main.jpg",
+      "images": []
+    },
+    {
+      "index": 11,
+      "name": "עיצוב פוסטרים לליין מסיבות",
+      "isBig": false,
+      "mainImage": "images/%D7%A2%D7%99%D7%A6%D7%95%D7%91%20%D7%A4%D7%95%D7%A1%D7%98%D7%A8%D7%99%D7%9D%20%D7%9C%D7%9C%D7%99%D7%99%D7%9F%20%D7%9E%D7%A1%D7%99%D7%91%D7%95%D7%AA/main.png",
+      "images": []
+    },
+    {
+      "index": 12,
+      "name": "עיצוב פרסום ומיתוג למסיבת טכנו",
+      "isBig": true,
+      "mainImage": "images/%D7%A2%D7%99%D7%A6%D7%95%D7%91%20%D7%A4%D7%A8%D7%A1%D7%95%D7%9D%20%D7%95%D7%9E%D7%99%D7%AA%D7%95%D7%92%20%D7%9C%D7%9E%D7%A1%D7%99%D7%91%D7%AA%20%D7%98%D7%9B%D7%A0%D7%95/main.png",
+      "images": [
+        "images/%D7%A2%D7%99%D7%A6%D7%95%D7%91%20%D7%A4%D7%A8%D7%A1%D7%95%D7%9D%20%D7%95%D7%9E%D7%99%D7%AA%D7%95%D7%92%20%D7%9C%D7%9E%D7%A1%D7%99%D7%91%D7%AA%20%D7%98%D7%9B%D7%A0%D7%95/%D7%90%D7%A8%D7%99%D7%96%D7%94.JPG"
+      ]
+    },
+    {
+      "index": 14,
+      "name": "עשן הזמן",
+      "isBig": true,
+      "mainImage": "images/%D7%A2%D7%A9%D7%9F%20%D7%94%D7%96%D7%9E%D7%9F/main.png",
+      "images": [
+        "images/%D7%A2%D7%A9%D7%9F%20%D7%94%D7%96%D7%9E%D7%9F/1.png",
+        "images/%D7%A2%D7%A9%D7%9F%20%D7%94%D7%96%D7%9E%D7%9F/2.png"
+      ]
+    },
+    {
+      "index": 15,
+      "name": "פוסטרים - איכות הסביבה",
+      "isBig": false,
+      "mainImage": "images/%D7%A4%D7%95%D7%A1%D7%98%D7%A8%D7%99%D7%9D%20-%20%D7%90%D7%99%D7%9B%D7%95%D7%AA%20%D7%94%D7%A1%D7%91%D7%99%D7%91%D7%94/main.jpg",
+      "images": []
+    },
+    {
+      "index": 16,
+      "name": "פוסטרים דייוויד הוקני",
+      "isBig": false,
+      "mainImage": "images/%D7%A4%D7%95%D7%A1%D7%98%D7%A8%D7%99%D7%9D%20%D7%93%D7%99%D7%99%D7%95%D7%95%D7%99%D7%93%20%D7%94%D7%95%D7%A7%D7%A0%D7%99/main.png",
+      "images": []
+    }
+  ]
+}

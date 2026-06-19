@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(Start-Process -NoNewWindow -FilePath \"node\" -ArgumentList \"server.js\" -WorkingDirectory \"d:\\\\Projects\\\\Nika Portfolio\" -RedirectStandardOutput \"d:\\\\Projects\\\\Nika Portfolio\\\\server.log\" -PassThru)",
+      "Bash(Start-Sleep -Milliseconds 1500)",
+      "Bash(Invoke-RestMethod http://localhost:3000/api/works)",
+      "PowerShell(Invoke-WebRequest http://localhost:3000/api/works -UseBasicParsing | Select-Object -ExpandProperty Content | ConvertFrom-Json | Select-Object -ExpandProperty works | Select-Object -First 1 | ForEach-Object { \"name: $\\($_.name\\)\"; \"mainImage: $\\($_.mainImage\\)\"; \"images count: $\\($_.images.Count\\)\"; \"images[0]: $\\($_.images[0]\\)\" })",
+      "PowerShell(cd \"d:\\\\Projects\\\\Nika Portfolio\"; node build.js; Write-Host \"---\"; Get-Content manifest.json | ConvertFrom-Json | Select-Object -ExpandProperty works | Select-Object name, isBig, @{n='extraImages';e={$_.images.Count}})",
+      "PowerShell(cd \"d:\\\\Projects\\\\Nika Portfolio\"; Get-Content manifest.json | ConvertFrom-Json | Select-Object -ExpandProperty works | Select-Object name, isBig, @{n='extras';e={$_.images.Count}} | Format-Table -AutoSize)"
+    ]
+  }
+}
