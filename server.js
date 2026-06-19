@@ -39,8 +39,7 @@ app.get('/api/works', async (req, res) => {
       const name    = dirent.name;
       const folder  = path.join(IMAGES_DIR, name);
       const files   = fs.readdirSync(folder);
-      const enc     = s => encodeURIComponent(s);
-      const urlBase = `images/${enc(name)}`;
+      const urlBase = `images/${name}`;
 
       let mainFile = files.find(f => /^main\./i.test(f) && IMAGE_EXT.test(f));
       if (!mainFile) {
@@ -51,7 +50,7 @@ app.get('/api/works', async (req, res) => {
       const additionalMedia = files
         .filter(f => f !== mainFile && MEDIA_EXT.test(f))
         .sort(numSort)
-        .map(f => `${urlBase}/${enc(f)}`);
+        .map(f => `${urlBase}/${f}`);
 
       let info = {};
       const infoPath = path.join(folder, 'info.json');
@@ -73,7 +72,7 @@ app.get('/api/works', async (req, res) => {
         name,
         featured:  featuredNames.includes(name),
         isBig:     additionalMedia.length > 0,
-        mainImage: `${urlBase}/${enc(mainFile)}`,
+        mainImage: `${urlBase}/${mainFile}`,
         images:    additionalMedia,
         ...(docxText && { docxText }),
         ...info

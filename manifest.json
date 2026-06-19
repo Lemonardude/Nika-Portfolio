@@ -37,10 +37,10 @@
       "name": "עשן הזמן",
       "featured": true,
       "isBig": true,
-      "mainImage": "images/%D7%A2%D7%A9%D7%9F%20%D7%94%D7%96%D7%9E%D7%9F/main.png",
+      "mainImage": "images/עשן הזמן/main.png",
       "images": [
-        "images/%D7%A2%D7%A9%D7%9F%20%D7%94%D7%96%D7%9E%D7%9F/1.png",
-        "images/%D7%A2%D7%A9%D7%9F%20%D7%94%D7%96%D7%9E%D7%9F/2.png"
+        "images/עשן הזמן/1.png",
+        "images/עשן הזמן/2.png"
       ]
     },
     {
@@ -48,9 +48,9 @@
       "name": "Brush Bunny",
       "featured": true,
       "isBig": true,
-      "mainImage": "images/Brush%20Bunny/main.png",
+      "mainImage": "images/Brush Bunny/main.png",
       "images": [
-        "images/Brush%20Bunny/1.png"
+        "images/Brush Bunny/1.png"
       ]
     },
     {
@@ -58,7 +58,7 @@
       "name": "DAVID HOCKNEY",
       "featured": false,
       "isBig": false,
-      "mainImage": "images/DAVID%20HOCKNEY/main.png",
+      "mainImage": "images/DAVID HOCKNEY/main.png",
       "images": []
     },
     {
@@ -66,9 +66,9 @@
       "name": "LADIES FIRST - קבוצת רובוטיקה נשים",
       "featured": false,
       "isBig": true,
-      "mainImage": "images/LADIES%20FIRST%20-%20%D7%A7%D7%91%D7%95%D7%A6%D7%AA%20%D7%A8%D7%95%D7%91%D7%95%D7%98%D7%99%D7%A7%D7%94%20%D7%A0%D7%A9%D7%99%D7%9D/main.jpg",
+      "mainImage": "images/LADIES FIRST - קבוצת רובוטיקה נשים/main.jpg",
       "images": [
-        "images/LADIES%20FIRST%20-%20%D7%A7%D7%91%D7%95%D7%A6%D7%AA%20%D7%A8%D7%95%D7%91%D7%95%D7%98%D7%99%D7%A7%D7%94%20%D7%A0%D7%A9%D7%99%D7%9D/%D7%9C%D7%95%D7%92%D7%95%20%D7%9C%D7%A7%D7%91%D7%95%D7%A6%D7%AA%20%D7%A8%D7%95%D7%91%D7%95%D7%98%D7%99%D7%A7%D7%94%20%D7%A9%D7%9C%20%D7%A0%D7%A9%D7%99%D7%9D.jpg"
+        "images/LADIES FIRST - קבוצת רובוטיקה נשים/לוגו לקבוצת רובוטיקה של נשים.jpg"
       ],
       "docxText": "עיצוב לוגו לקבוצת רובוטיקה של בנות אולפנה"
     },
@@ -86,7 +86,7 @@
       "name": "seasalt עיצוב לוגו ואפליקציית הזמנות",
       "featured": false,
       "isBig": false,
-      "mainImage": "images/seasalt%20%D7%A2%D7%99%D7%A6%D7%95%D7%91%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%99%D7%AA%20%D7%94%D7%96%D7%9E%D7%A0%D7%95%D7%AA/main.jpg",
+      "mainImage": "images/seasalt עיצוב לוגו ואפליקציית הזמנות/main.jpg",
       "images": []
     },
     {
@@ -94,9 +94,9 @@
       "name": "walking on a dream",
       "featured": false,
       "isBig": true,
-      "mainImage": "images/walking%20on%20a%20dream/main.png",
+      "mainImage": "images/walking on a dream/main.png",
       "images": [
-        "images/walking%20on%20a%20dream/walking%20on%20a%20dream%20eye.mp4"
+        "images/walking on a dream/walking on a dream eye.mp4"
       ],
       "docxText": "סרטון אנימציה בלופ.\n\nתהליך העבודה כלל בניית תסריט, איור ידני בפרוקרייט, אנימציה ידנית ועבודת בתוכנת האפטר אפקט (procreate, AE)"
     },
@@ -105,7 +105,7 @@
       "name": "הקולב",
       "featured": false,
       "isBig": false,
-      "mainImage": "images/%D7%94%D7%A7%D7%95%D7%9C%D7%91/main.jpg",
+      "mainImage": "images/הקולב/main.jpg",
       "images": [],
       "docxText": "עיצוב אפליקציה ולוגו לאפליקציית בגדים יד 2"
     },
@@ -114,7 +114,7 @@
       "name": "לוגו מפיקת אירועים",
       "featured": false,
       "isBig": false,
-      "mainImage": "images/%D7%9C%D7%95%D7%92%D7%95%20%D7%9E%D7%A4%D7%99%D7%A7%D7%AA%20%D7%90%D7%99%D7%A8%D7%95%D7%A2%D7%99%D7%9D/main.jpg",
+      "mainImage": "images/לוגו מפיקת אירועים/main.jpg",
       "images": []
     },
     {
@@ -122,7 +122,7 @@
       "name": "מכללה טכנולוגית- אגודת הסטודנטים",
       "featured": false,
       "isBig": false,
-      "mainImage": "images/%D7%9E%D7%9B%D7%9C%D7%9C%D7%94%20%D7%98%D7%9B%D7%A0%D7%95%D7%9C%D7%95%D7%92%D7%99%D7%AA-%20%D7%90%D7%92%D7%95%D7%93%D7%AA%20%D7%94%D7%A1%D7%98%D7%95%D7%93%D7%A0%D7%98%D7%99%D7%9D/main.png",
+      "mainImage": "images/מכללה טכנולוגית- אגודת הסטודנטים/main.png",
       "images": [],
       "docxText": "עיצוב לוגו ופוסט לתחילת הלימודים-מכללה טכנולוגית"
     },
@@ -131,7 +131,7 @@
       "name": "משחק פוקר",
       "featured": false,
       "isBig": false,
-      "mainImage": "images/%D7%9E%D7%A9%D7%97%D7%A7%20%D7%A4%D7%95%D7%A7%D7%A8/main.png",
+      "mainImage": "images/משחק פוקר/main.png",
       "images": []
     },
     {
@@ -139,7 +139,7 @@
       "name": "ספר ביוגרפיה יאיו קוסמה",
       "featured": false,
       "isBig": false,
-      "mainImage": "images/%D7%A1%D7%A4%D7%A8%20%D7%91%D7%99%D7%95%D7%92%D7%A8%D7%A4%D7%99%D7%94%20%D7%99%D7%90%D7%99%D7%95%20%D7%A7%D7%95%D7%A1%D7%9E%D7%94/main.jpg",
+      "mainImage": "images/ספר ביוגרפיה יאיו קוסמה/main.jpg",
       "images": []
     },
     {
@@ -147,7 +147,7 @@
       "name": "סקיצה",
       "featured": false,
       "isBig": false,
-      "mainImage": "images/%D7%A1%D7%A7%D7%99%D7%A6%D7%94/main.jpg",
+      "mainImage": "images/סקיצה/main.jpg",
       "images": [],
       "docxText": "מיתוג בית ספר לעיצוב בשם סקיצה ועיצוב שלט חוצות",
       "displayName": "“סקיצה”"
@@ -157,9 +157,9 @@
       "name": "עיצוב פרסום ומיתוג למסיבת טכנו",
       "featured": false,
       "isBig": true,
-      "mainImage": "images/%D7%A2%D7%99%D7%A6%D7%95%D7%91%20%D7%A4%D7%A8%D7%A1%D7%95%D7%9D%20%D7%95%D7%9E%D7%99%D7%AA%D7%95%D7%92%20%D7%9C%D7%9E%D7%A1%D7%99%D7%91%D7%AA%20%D7%98%D7%9B%D7%A0%D7%95/main.png",
+      "mainImage": "images/עיצוב פרסום ומיתוג למסיבת טכנו/main.png",
       "images": [
-        "images/%D7%A2%D7%99%D7%A6%D7%95%D7%91%20%D7%A4%D7%A8%D7%A1%D7%95%D7%9D%20%D7%95%D7%9E%D7%99%D7%AA%D7%95%D7%92%20%D7%9C%D7%9E%D7%A1%D7%99%D7%91%D7%AA%20%D7%98%D7%9B%D7%A0%D7%95/%D7%90%D7%A8%D7%99%D7%96%D7%94.JPG"
+        "images/עיצוב פרסום ומיתוג למסיבת טכנו/אריזה.JPG"
       ]
     },
     {
@@ -167,7 +167,7 @@
       "name": "עיצובים להזמנות בסושיאל לאירועים בספריה",
       "featured": false,
       "isBig": false,
-      "mainImage": "images/%D7%A2%D7%99%D7%A6%D7%95%D7%91%D7%99%D7%9D%20%D7%9C%D7%94%D7%96%D7%9E%D7%A0%D7%95%D7%AA%20%D7%91%D7%A1%D7%95%D7%A9%D7%99%D7%90%D7%9C%20%D7%9C%D7%90%D7%99%D7%A8%D7%95%D7%A2%D7%99%D7%9D%20%D7%91%D7%A1%D7%A4%D7%A8%D7%99%D7%94/%D7%A2%D7%99%D7%A6%D7%95%D7%91%D7%99%D7%9D%20%D7%9C%D7%94%D7%96%D7%9E%D7%A0%D7%95%D7%AA%20%D7%91%D7%A1%D7%95%D7%A9%D7%99%D7%90%D7%9C%20%D7%9C%D7%90%D7%99%D7%A8%D7%95%D7%A2%D7%99%D7%9D%20%D7%91%D7%A1%D7%A4%D7%A8%D7%99%D7%94.png",
+      "mainImage": "images/עיצובים להזמנות בסושיאל לאירועים בספריה/עיצובים להזמנות בסושיאל לאירועים בספריה.png",
       "images": []
     },
     {
@@ -175,7 +175,7 @@
       "name": "פוסטרים - איכות הסביבה",
       "featured": false,
       "isBig": false,
-      "mainImage": "images/%D7%A4%D7%95%D7%A1%D7%98%D7%A8%D7%99%D7%9D%20-%20%D7%90%D7%99%D7%9B%D7%95%D7%AA%20%D7%94%D7%A1%D7%91%D7%99%D7%91%D7%94/main.jpg",
+      "mainImage": "images/פוסטרים - איכות הסביבה/main.jpg",
       "images": []
     }
   ]

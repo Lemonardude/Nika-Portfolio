@@ -11,7 +11,14 @@
       "Bash(node -e ' *)",
       "Bash(node build.js)",
       "Bash(node -e \"const m=require\\('./manifest.json'\\); const s=m.works.find\\(w=>w.name==='סקיצה'\\); console.log\\(JSON.stringify\\(s,null,2\\)\\)\")",
-      "Bash(node -e \"const m=require\\('./manifest.json'\\); console.log\\('Featured:', m.works.filter\\(w=>w.featured\\).map\\(w=>w.name\\)\\)\")"
+      "Bash(node -e \"const m=require\\('./manifest.json'\\); console.log\\('Featured:', m.works.filter\\(w=>w.featured\\).map\\(w=>w.name\\)\\)\")",
+      "Bash(node -e \"const m=require\\('./manifest.json'\\); const b=m.works.find\\(w=>w.name==='Brush Bunny'\\); console.log\\(JSON.stringify\\(b,null,2\\)\\)\")",
+      "Bash(Test-Path \"d:\\\\Projects\\\\Nika Portfolio\\\\images\\\\Brush Bunny\\\\main.png\")",
+      "PowerShell(Test-Path \"d:\\\\Projects\\\\Nika Portfolio\\\\images\\\\Brush Bunny\\\\main.png\"; \\(Get-Item \"d:\\\\Projects\\\\Nika Portfolio\\\\images\\\\Brush Bunny\\\\main.png\"\\).Length)",
+      "PowerShell($bytes = [System.IO.File]::ReadAllBytes\\(\"d:\\\\Projects\\\\Nika Portfolio\\\\images\\\\Brush Bunny\\\\main.png\"\\) | Select-Object -First 8; $bytes | ForEach-Object { \"0x{0:X2}\" -f $_ })",
+      "PowerShell(try { $r = Invoke-WebRequest \"http://localhost:3000/images/Brush%20Bunny/main.png\" -UseBasicParsing; \"Status: $\\($r.StatusCode\\), Size: $\\($r.RawContentLength\\)\" } catch { \"Error: $_\" })",
+      "PowerShell($m = Get-Content \"d:\\\\Projects\\\\Nika Portfolio\\\\manifest.json\" | ConvertFrom-Json; $b = $m.works | Where-Object { $_.name -eq \"Brush Bunny\" }; $b.mainImage)",
+      "PowerShell($m = Get-Content \"d:\\\\Projects\\\\Nika Portfolio\\\\manifest.json\" | ConvertFrom-Json; $w = $m.works | Where-Object { $_.name -eq \"עשן הזמן\" }; $w.mainImage)"
     ]
   }
 }

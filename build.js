@@ -38,8 +38,7 @@ async function main() {
     const name    = dirent.name;
     const folder  = path.join(IMAGES_DIR, name);
     const files   = fs.readdirSync(folder);
-    const enc     = s => encodeURIComponent(s);
-    const urlBase = `images/${enc(name)}`;
+    const urlBase = `images/${name}`;
 
     // Main image: prefer "main.*", fallback to first image found
     let mainFile = files.find(f => /^main\./i.test(f) && IMAGE_EXT.test(f));
@@ -52,7 +51,7 @@ async function main() {
     const additionalMedia = files
       .filter(f => f !== mainFile && MEDIA_EXT.test(f))
       .sort(numSort)
-      .map(f => `${urlBase}/${enc(f)}`);
+      .map(f => `${urlBase}/${f}`);
 
     // info.json (description, year, category, client, …)
     let info = {};
@@ -76,7 +75,7 @@ async function main() {
       name,
       featured:  featuredNames.includes(name),
       isBig:     additionalMedia.length > 0,
-      mainImage: `${urlBase}/${enc(mainFile)}`,
+      mainImage: `${urlBase}/${mainFile}`,
       images:    additionalMedia,
       ...(docxText && { docxText }),
       ...info

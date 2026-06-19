@@ -333,6 +333,7 @@ nav { display: flex; gap: 2.5rem; }
   align-items: center;
   justify-content: center;
   background: var(--bg);
+  overflow: hidden;
 }
 /* Image fills full viewport width; tall images clip at top/bottom edges */
 .project-img--full img {
@@ -455,8 +456,8 @@ nav { display: flex; gap: 2.5rem; }
 
   .project-mosaic { grid-template-columns: 1fr; }
   .project-mosaic .p-img.wide { grid-column: span 1; }
-  .project-img--full { height: 65svh; }
-  .project-img--full img { max-height: 65svh; }
+  .project-img--full { height: 65svh; overflow: hidden; }
+  .project-img--full img { max-height: none; }
   .featured-item { height: 85svh; }
   .featured-title { font-size: clamp(1.8rem, 8vw, 2.8rem); }
 }
