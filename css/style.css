@@ -372,6 +372,7 @@ nav { display: flex; gap: 2.5rem; }
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: calc(100svh - 16rem);
 }
 .project-single img,
 .project-single video {
