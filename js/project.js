@@ -64,19 +64,19 @@ async function loadProject() {
       descEl.style.display  = 'none';
     }
 
-    // ── Media: main first, then numerically sorted files (deduplicated)
-    const seen = new Set();
-    const all  = [work.mainImage, ...work.images].filter(src => {
-      if (seen.has(src)) return false;
-      seen.add(src);
-      return true;
-    });
-
+    // Featured projects: skip main image (it's the homepage hero), show only extra images
+    // Small projects: show main image + any extras, deduplicated
     const imagesEl = document.getElementById('projectImages');
 
     if (work.featured) {
-      buildFullscreen(all, work.name, imagesEl);
+      buildFullscreen(work.images, work.name, imagesEl);
     } else {
+      const seen = new Set();
+      const all  = [work.mainImage, ...work.images].filter(src => {
+        if (seen.has(src)) return false;
+        seen.add(src);
+        return true;
+      });
       buildSmall(all, work.name, imagesEl);
     }
 
