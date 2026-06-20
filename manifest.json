@@ -1,7 +1,7 @@
 {
   "works": [
     {
-      "index": 4,
+      "index": 5,
       "name": "mirage",
       "featured": true,
       "isBig": true,
@@ -21,7 +21,7 @@
       ]
     },
     {
-      "index": 2,
+      "index": 3,
       "name": "FLASHBACK",
       "featured": true,
       "isBig": true,
@@ -33,7 +33,7 @@
       ]
     },
     {
-      "index": 16,
+      "index": 17,
       "name": "עשן הזמן",
       "featured": true,
       "isBig": true,
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "index": 0,
+      "index": 1,
       "name": "Brush Bunny",
       "featured": true,
       "isBig": true,
@@ -54,7 +54,16 @@
       ]
     },
     {
-      "index": 1,
+      "index": 0,
+      "name": "Barbie",
+      "featured": false,
+      "isBig": false,
+      "mainImage": "images/Barbie/main.jpg",
+      "images": [],
+      "docxText": "צילום ועיצוב בפוטושופ\n\nנושא צילום: צבע ורוד"
+    },
+    {
+      "index": 2,
       "name": "DAVID HOCKNEY",
       "featured": false,
       "isBig": false,
@@ -62,7 +71,7 @@
       "images": []
     },
     {
-      "index": 3,
+      "index": 4,
       "name": "LADIES FIRST - קבוצת רובוטיקה נשים",
       "featured": false,
       "isBig": true,
@@ -73,7 +82,7 @@
       "docxText": "עיצוב לוגו לקבוצת רובוטיקה של בנות אולפנה"
     },
     {
-      "index": 5,
+      "index": 6,
       "name": "MYMEALS",
       "featured": false,
       "isBig": false,
@@ -82,7 +91,7 @@
       "docxText": "עיצוב ולוגו ואפליקציית מעקב תזונה"
     },
     {
-      "index": 6,
+      "index": 7,
       "name": "seasalt עיצוב לוגו ואפליקציית הזמנות",
       "featured": false,
       "isBig": false,
@@ -90,7 +99,7 @@
       "images": []
     },
     {
-      "index": 7,
+      "index": 8,
       "name": "walking on a dream",
       "featured": false,
       "isBig": true,
@@ -101,7 +110,18 @@
       "docxText": "סרטון אנימציה בלופ.\n\nתהליך העבודה כלל בניית תסריט, איור ידני בפרוקרייט, אנימציה ידנית ועבודת בתוכנת האפטר אפקט (procreate, AE)"
     },
     {
-      "index": 8,
+      "index": 9,
+      "name": "אולימפיאדה 2028",
+      "featured": false,
+      "isBig": true,
+      "mainImage": "images/אולימפיאדה 2028/main.png",
+      "images": [
+        "images/אולימפיאדה 2028/1.mp4"
+      ],
+      "docxText": "עיצוב כרזת אנימציה עם טרנזישן, עבודה עם AE ועיצוב ב illustrator"
+    },
+    {
+      "index": 10,
       "name": "הקולב",
       "featured": false,
       "isBig": false,
@@ -110,7 +130,7 @@
       "docxText": "עיצוב אפליקציה ולוגו לאפליקציית בגדים יד 2"
     },
     {
-      "index": 9,
+      "index": 11,
       "name": "לוגו מפיקת אירועים",
       "featured": false,
       "isBig": false,
@@ -118,16 +138,7 @@
       "images": []
     },
     {
-      "index": 10,
-      "name": "מכללה טכנולוגית- אגודת הסטודנטים",
-      "featured": false,
-      "isBig": false,
-      "mainImage": "images/מכללה טכנולוגית- אגודת הסטודנטים/main.png",
-      "images": [],
-      "docxText": "עיצוב לוגו ופוסט לתחילת הלימודים-מכללה טכנולוגית"
-    },
-    {
-      "index": 11,
+      "index": 12,
       "name": "משחק פוקר",
       "featured": false,
       "isBig": false,
@@ -135,7 +146,7 @@
       "images": []
     },
     {
-      "index": 12,
+      "index": 13,
       "name": "ספר ביוגרפיה יאיו קוסמה",
       "featured": false,
       "isBig": false,
@@ -143,7 +154,7 @@
       "images": []
     },
     {
-      "index": 13,
+      "index": 14,
       "name": "סקיצה",
       "featured": false,
       "isBig": false,
@@ -153,7 +164,7 @@
       "displayName": "“סקיצה”"
     },
     {
-      "index": 14,
+      "index": 15,
       "name": "עיצוב פרסום ומיתוג למסיבת טכנו",
       "featured": false,
       "isBig": true,
@@ -163,7 +174,7 @@
       ]
     },
     {
-      "index": 15,
+      "index": 16,
       "name": "עיצובים להזמנות בסושיאל לאירועים בספריה",
       "featured": false,
       "isBig": false,
@@ -171,7 +182,7 @@
       "images": []
     },
     {
-      "index": 17,
+      "index": 18,
       "name": "פוסטרים - איכות הסביבה",
       "featured": false,
       "isBig": false,
