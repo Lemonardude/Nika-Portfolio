@@ -1,7 +1,7 @@
 {
   "works": [
     {
-      "index": 5,
+      "index": 6,
       "name": "mirage",
       "featured": true,
       "isBig": true,
@@ -21,7 +21,7 @@
       ]
     },
     {
-      "index": 3,
+      "index": 4,
       "name": "FLASHBACK",
       "featured": true,
       "isBig": true,
@@ -33,7 +33,7 @@
       ]
     },
     {
-      "index": 17,
+      "index": 20,
       "name": "עשן הזמן",
       "featured": true,
       "isBig": true,
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "index": 1,
+      "index": 2,
       "name": "Brush Bunny",
       "featured": true,
       "isBig": true,
@@ -63,7 +63,18 @@
       "docxText": "צילום ועיצוב בפוטושופ\n\nנושא צילום: צבע ורוד"
     },
     {
-      "index": 2,
+      "index": 1,
+      "name": "BOMB",
+      "featured": false,
+      "isBig": true,
+      "mainImage": "images/BOMB/main.png",
+      "images": [
+        "images/BOMB/1.mp4"
+      ],
+      "docxText": "מיתוג לערוץ BOMB — ערוץ תוכן העוסק בגרפיטי ותרבות רחוב. השפה הגרפית נבנתה מתוך עולם הקירות, הספריי והאנרגיה האורבנית, במטרה ליצור מותג צעיר, בולט ודינמי שמתאים למסך.עבודה ב: Premiere Pro, Procreate, Illustrator, After Effects"
+    },
+    {
+      "index": 3,
       "name": "DAVID HOCKNEY",
       "featured": false,
       "isBig": false,
@@ -71,7 +82,7 @@
       "images": []
     },
     {
-      "index": 4,
+      "index": 5,
       "name": "LADIES FIRST - קבוצת רובוטיקה נשים",
       "featured": false,
       "isBig": true,
@@ -82,7 +93,7 @@
       "docxText": "עיצוב לוגו לקבוצת רובוטיקה של בנות אולפנה"
     },
     {
-      "index": 6,
+      "index": 7,
       "name": "MYMEALS",
       "featured": false,
       "isBig": false,
@@ -91,7 +102,7 @@
       "docxText": "עיצוב ולוגו ואפליקציית מעקב תזונה"
     },
     {
-      "index": 7,
+      "index": 8,
       "name": "seasalt עיצוב לוגו ואפליקציית הזמנות",
       "featured": false,
       "isBig": false,
@@ -99,7 +110,7 @@
       "images": []
     },
     {
-      "index": 8,
+      "index": 9,
       "name": "walking on a dream",
       "featured": false,
       "isBig": true,
@@ -110,7 +121,7 @@
       "docxText": "סרטון אנימציה בלופ.\n\nתהליך העבודה כלל בניית תסריט, איור ידני בפרוקרייט, אנימציה ידנית ועבודת בתוכנת האפטר אפקט (procreate, AE)"
     },
     {
-      "index": 9,
+      "index": 10,
       "name": "אולימפיאדה 2028",
       "featured": false,
       "isBig": true,
@@ -121,7 +132,30 @@
       "docxText": "עיצוב כרזת אנימציה עם טרנזישן, עבודה עם AE ועיצוב ב illustrator"
     },
     {
-      "index": 10,
+      "index": 11,
+      "name": "אינפוגרפיקה",
+      "featured": false,
+      "isBig": true,
+      "mainImage": "images/אינפוגרפיקה/main.png",
+      "images": [
+        "images/אינפוגרפיקה/1.mp4"
+      ],
+      "docxText": "סרטון אינפוגרפי המציג נתונים על פופולריות נסיכות דיסני לפי גוון עור"
+    },
+    {
+      "index": 12,
+      "name": "באר שבע על ציר זמן",
+      "featured": false,
+      "isBig": true,
+      "mainImage": "images/באר שבע על ציר זמן/main.png",
+      "images": [
+        "images/באר שבע על ציר זמן/1.png",
+        "images/באר שבע על ציר זמן/2.mp4"
+      ],
+      "docxText": "הפוסטרים מציגים את התפתחות באר שבע לאורך השנים, דרך מבנים שמייצגים תקופות מרכזיות בעיר.אנימציה ידנית ב procreate, עיצוב פוסטר ב illustrator"
+    },
+    {
+      "index": 13,
       "name": "הקולב",
       "featured": false,
       "isBig": false,
@@ -130,7 +164,7 @@
       "docxText": "עיצוב אפליקציה ולוגו לאפליקציית בגדים יד 2"
     },
     {
-      "index": 11,
+      "index": 14,
       "name": "לוגו מפיקת אירועים",
       "featured": false,
       "isBig": false,
@@ -138,7 +172,7 @@
       "images": []
     },
     {
-      "index": 12,
+      "index": 15,
       "name": "משחק פוקר",
       "featured": false,
       "isBig": false,
@@ -146,7 +180,7 @@
       "images": []
     },
     {
-      "index": 13,
+      "index": 16,
       "name": "ספר ביוגרפיה יאיו קוסמה",
       "featured": false,
       "isBig": false,
@@ -154,7 +188,7 @@
       "images": []
     },
     {
-      "index": 14,
+      "index": 17,
       "name": "סקיצה",
       "featured": false,
       "isBig": false,
@@ -164,7 +198,7 @@
       "displayName": "“סקיצה”"
     },
     {
-      "index": 15,
+      "index": 18,
       "name": "עיצוב פרסום ומיתוג למסיבת טכנו",
       "featured": false,
       "isBig": true,
@@ -174,7 +208,7 @@
       ]
     },
     {
-      "index": 16,
+      "index": 19,
       "name": "עיצובים להזמנות בסושיאל לאירועים בספריה",
       "featured": false,
       "isBig": false,
@@ -182,7 +216,7 @@
       "images": []
     },
     {
-      "index": 18,
+      "index": 21,
       "name": "פוסטרים - איכות הסביבה",
       "featured": false,
       "isBig": false,
